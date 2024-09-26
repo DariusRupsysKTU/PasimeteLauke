@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://byd3e5k248gla"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_7o5v3"]
+[ext_resource type="PackedScene" uid="uid://kagvjud7va5x" path="res://player.tscn" id="2_2sx5j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_s5fdl"]
+
+[node name="world" type="Node3D"]
+script = ExtResource("1_7o5v3")
+
+[node name="player" parent="." instance=ExtResource("2_2sx5j")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85744, 0, -4.10787)
+mesh = SubResource("BoxMesh_s5fdl")
