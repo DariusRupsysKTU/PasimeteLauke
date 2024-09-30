@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://pe0oenduurww"]
+[gd_scene format=3 uid="uid://dehsapf8wlj2l"]
 
 [node name="Level1" type="CanvasLayer"]
 
@@ -12,7 +12,7 @@ grow_vertical = 2
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 250
-text = "Level 1"
+text = "Level 3"
 
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/Button"]
 show_behind_parent = true
