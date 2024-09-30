@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://kagvjud7va5x"]
+[gd_scene load_steps=5 format=3 uid="uid://kagvjud7va5x"]
+
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="1_sd11b"]
+[ext_resource type="Material" uid="uid://dd4aiceehffm" path="res://pointer_material_3d.tres" id="2_byw5i"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fu6oy"]
 
@@ -18,6 +21,11 @@ tracker = &"right_hand"
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 mesh = SubResource("BoxMesh_fu6oy")
 
+[node name="FunctionPointer" parent="XROrigin3D/righthand" instance=ExtResource("1_sd11b")]
+laser_length = 1
+laser_material = ExtResource("2_byw5i")
+show_target = true
+
 [node name="lefthand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -2)
 tracker = &"left_hand"
@@ -25,3 +33,8 @@ tracker = &"left_hand"
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/lefthand"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 mesh = SubResource("BoxMesh_jjlkv")
+
+[node name="FunctionPointer" parent="XROrigin3D/lefthand" instance=ExtResource("1_sd11b")]
+laser_length = 1
+laser_material = ExtResource("2_byw5i")
+show_target = true
