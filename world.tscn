@@ -1,28 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://byd3e5k248gla"]
+[gd_scene load_steps=5 format=3 uid="uid://dbielna4bcyd8"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_7o5v3"]
 [ext_resource type="PackedScene" uid="uid://kagvjud7va5x" path="res://player.tscn" id="2_2sx5j"]
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" path="res://level_1.tscn" id="3_fkuml"]
-=======
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_6qs7r"]
 [ext_resource type="PackedScene" uid="uid://pe0oenduurww" path="res://level_1.tscn" id="3_fkuml"]
->>>>>>> Stashed changes
-
-[sub_resource type="BoxMesh" id="BoxMesh_s5fdl"]
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_7o5v3")
 
 [node name="player" parent="." instance=ExtResource("2_2sx5j")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85744, 0, -4.10787)
-mesh = SubResource("BoxMesh_s5fdl")
-
 [node name="Viewport2Din3D" parent="." instance=ExtResource("3_6qs7r")]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, -8)
-screen_size = Vector2(300, 300)
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, -7.79558)
+screen_size = Vector2(300, 200)
 scene = ExtResource("3_fkuml")
 viewport_size = Vector2(1152, 1152)
 unshaded = true
