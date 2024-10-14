@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dehsapf8wlj2l" path="res://level_3.tscn" id="6_6pexe"]
 [ext_resource type="PackedScene" uid="uid://d1f7gkyq3vsj4" path="res://level_4.tscn" id="7_ktm8v"]
 [ext_resource type="PackedScene" uid="uid://7r3or0dcg4dn" path="res://Nodes/Map.tscn" id="8_cko12"]
-[ext_resource type="PackedScene" uid="uid://dnmc6a1ew86g8" path="res://Nodes/quiver.tscn" id="9_5f471"]
+[ext_resource type="PackedScene" path="res://Nodes/quiver.tscn" id="9_5f471"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mx7oe"]
 size = Vector3(150, 150, 30)
