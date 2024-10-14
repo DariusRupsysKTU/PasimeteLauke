@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbielna4bcyd8"]
+[gd_scene load_steps=10 format=3 uid="uid://dbielna4bcyd8"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_7o5v3"]
 [ext_resource type="PackedScene" uid="uid://kagvjud7va5x" path="res://player.tscn" id="2_2sx5j"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dehsapf8wlj2l" path="res://level_3.tscn" id="6_6pexe"]
 [ext_resource type="PackedScene" uid="uid://d1f7gkyq3vsj4" path="res://level_4.tscn" id="7_ktm8v"]
 [ext_resource type="PackedScene" uid="uid://7r3or0dcg4dn" path="res://Nodes/Map.tscn" id="8_cko12"]
+[ext_resource type="PackedScene" uid="uid://b6fdntp4f0hgm" path="res://stick.tscn" id="10_wnte5"]
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_7o5v3")
@@ -49,3 +50,6 @@ scene_properties_keys = PackedStringArray()
 
 [node name="Map" parent="." instance=ExtResource("8_cko12")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="PickableObject" parent="." instance=ExtResource("10_wnte5")]
+transform = Transform3D(1, 0, 0, 0, 0.518027, -0.855364, 0, 0.855364, 0.518027, -1.18613, 1.94097, -1.38761)
