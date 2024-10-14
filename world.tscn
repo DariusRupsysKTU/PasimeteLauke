@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbielna4bcyd8"]
+[gd_scene load_steps=9 format=3 uid="uid://dbielna4bcyd8"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_7o5v3"]
 [ext_resource type="PackedScene" uid="uid://kagvjud7va5x" path="res://player.tscn" id="2_2sx5j"]
@@ -7,13 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dlnyg3qgf22oj" path="res://level_2.tscn" id="5_l3e51"]
 [ext_resource type="PackedScene" uid="uid://dehsapf8wlj2l" path="res://level_3.tscn" id="6_6pexe"]
 [ext_resource type="PackedScene" uid="uid://d1f7gkyq3vsj4" path="res://level_4.tscn" id="7_ktm8v"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h25yu"]
-albedo_color = Color(0.243137, 0.529412, 0.14902, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_rtdpb"]
-material = SubResource("StandardMaterial3D_h25yu")
-size = Vector2(100, 100)
+[ext_resource type="PackedScene" uid="uid://7r3or0dcg4dn" path="res://Nodes/Map.tscn" id="8_cko12"]
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_7o5v3")
@@ -53,8 +47,5 @@ viewport_size = Vector2(1152, 1152)
 unshaded = true
 scene_properties_keys = PackedStringArray()
 
-[node name="sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0)
-
-[node name="ground" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_rtdpb")
+[node name="Map" parent="." instance=ExtResource("8_cko12")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)

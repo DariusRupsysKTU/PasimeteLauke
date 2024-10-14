@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://kagvjud7va5x"]
+[gd_scene load_steps=10 format=3 uid="uid://kagvjud7va5x"]
 
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="1_sd11b"]
 [ext_resource type="Material" uid="uid://dd4aiceehffm" path="res://pointer_material_3d.tres" id="2_byw5i"]
 [ext_resource type="Material" uid="uid://d3wss8qb0bs0w" path="res://pointer_target_material_3d.tres" id="3_y3qs6"]
 [ext_resource type="PackedScene" uid="uid://ds1t8vc0kxoeo" path="res://addons/godot-xr-tools/hands/model/hand_r.gltf" id="4_kppkx"]
 [ext_resource type="PackedScene" uid="uid://dhaqth6q5yw4n" path="res://addons/godot-xr-tools/hands/model/hand_l.gltf" id="5_moymw"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_obd8x"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="6_fh2st"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/player/player_body.gd" id="7_bm27h"]
 
@@ -28,6 +29,11 @@ target_material = ExtResource("3_y3qs6")
 
 [node name="hand_r" parent="XROrigin3D/righthand" instance=ExtResource("4_kppkx")]
 
+[node name="MovementTurn" parent="XROrigin3D/righthand" instance=ExtResource("5_obd8x")]
+turn_mode = 1
+step_turn_delay = 1.0
+step_turn_angle = 30.0
+
 [node name="lefthand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -2)
 tracker = &"left_hand"
@@ -44,14 +50,12 @@ target_material = ExtResource("3_y3qs6")
 strafe = true
 
 [node name="XRToolsPlayerBody" type="CharacterBody3D" parent="XROrigin3D"]
-motion_mode = 1
+top_level = true
 platform_on_leave = 2
 script = ExtResource("7_bm27h")
-player_height_max = 1.0
 push_rigid_bodies = false
 ground_control = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/XRToolsPlayerBody"]
 visible = false
 shape = SubResource("CapsuleShape3D_ceeet")
-disabled = true
