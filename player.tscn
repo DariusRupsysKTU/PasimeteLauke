@@ -3,12 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="1_sd11b"]
 [ext_resource type="Material" uid="uid://dd4aiceehffm" path="res://pointer_material_3d.tres" id="2_byw5i"]
 [ext_resource type="Material" uid="uid://d3wss8qb0bs0w" path="res://pointer_target_material_3d.tres" id="3_y3qs6"]
-[ext_resource type="PackedScene" uid="uid://ds1t8vc0kxoeo" path="res://addons/godot-xr-tools/hands/model/hand_r.gltf" id="4_kppkx"]
-[ext_resource type="PackedScene" uid="uid://dhaqth6q5yw4n" path="res://addons/godot-xr-tools/hands/model/hand_l.gltf" id="5_moymw"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_obd8x"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="6_8m5qv"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="6_fh2st"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="6_sl0px"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/player/player_body.gd" id="7_bm27h"]
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="8_xrqtq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ceeet"]
 radius = 0.005
@@ -30,15 +30,14 @@ laser_material = ExtResource("2_byw5i")
 show_target = true
 target_material = ExtResource("3_y3qs6")
 
-[node name="hand_r" parent="XROrigin3D/righthand" instance=ExtResource("4_kppkx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.15)
-
 [node name="MovementTurn" parent="XROrigin3D/righthand" instance=ExtResource("5_obd8x")]
 turn_mode = 1
 step_turn_delay = 1.0
 step_turn_angle = 30.0
 
 [node name="FunctionPickup" parent="XROrigin3D/righthand" instance=ExtResource("6_sl0px")]
+
+[node name="RightHand" parent="XROrigin3D/righthand" instance=ExtResource("6_8m5qv")]
 
 [node name="lefthand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -2)
@@ -50,13 +49,12 @@ laser_material = ExtResource("2_byw5i")
 show_target = true
 target_material = ExtResource("3_y3qs6")
 
-[node name="hand_l" parent="XROrigin3D/lefthand" instance=ExtResource("5_moymw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.15)
-
 [node name="MovementDirect" parent="XROrigin3D/lefthand" instance=ExtResource("6_fh2st")]
 strafe = true
 
 [node name="FunctionPickup" parent="XROrigin3D/lefthand" instance=ExtResource("6_sl0px")]
+
+[node name="LeftHand" parent="XROrigin3D/lefthand" instance=ExtResource("8_xrqtq")]
 
 [node name="XRToolsPlayerBody" type="CharacterBody3D" parent="XROrigin3D"]
 top_level = true

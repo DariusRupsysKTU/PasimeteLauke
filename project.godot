@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="pasimete lauke"
-run/main_scene="res://models/titnagas.glb"
+run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,7 +23,7 @@ XrSimulator="*res://addons/xr-simulator/XRSimulator.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg", "res://addons/instant-realistic-light/plugin.cfg")
 
 [xr]
 
