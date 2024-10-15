@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://dnmc6a1ew86g8"]
 
 [ext_resource type="Script" path="res://scripts/quiver.gd" id="1_d74uo"]
-[ext_resource type="PackedScene" uid="uid://by4saalb13w8v" path="res://titnagas1.tscn" id="1_vhgvf"]
+[ext_resource type="PackedScene" uid="uid://by4saalb13w8v" path="res://Nodes/titnagas1.tscn" id="1_vhgvf"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ctgxe"]
 
