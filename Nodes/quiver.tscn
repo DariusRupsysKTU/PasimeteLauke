@@ -1,7 +1,27 @@
-[gd_scene load_steps=9 format=4 uid="uid://dnmc6a1ew86g8"]
+[gd_scene load_steps=14 format=4 uid="uid://dnmc6a1ew86g8"]
 
 [ext_resource type="Script" path="res://scripts/quiver.gd" id="1_d74uo"]
 [ext_resource type="PackedScene" uid="uid://by4saalb13w8v" path="res://Nodes/titnagas1.tscn" id="1_vhgvf"]
+[ext_resource type="Script" path="res://scripts/titnago_collision.gd" id="3_1jbsw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8wrp7"]
+size = Vector3(0.108986, 0.302321, 0.0269775)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bxo2r"]
+particle_flag_rotate_y = true
+angle_min = 1.07288e-05
+angle_max = 90.0
+direction = Vector3(0, -1, 1)
+spread = 60.723
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qytjc"]
+albedo_color = Color(1, 1, 0.298039, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hlwdc"]
+material = SubResource("StandardMaterial3D_qytjc")
+size = Vector3(0.05, 0.05, 0.05)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ctgxe"]
 
@@ -82,9 +102,32 @@ script = ExtResource("1_d74uo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82269, 0)
 freeze = true
 
+[node name="Area3D" type="Area3D" parent="PickableObject"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickableObject/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.977324, -0.211751, 0, 0.211751, 0.977324, 0.0588973, -0.203338, 0.146776)
+shape = SubResource("BoxShape3D_8wrp7")
+script = ExtResource("3_1jbsw")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="PickableObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.226294, 0.141449)
+emitting = false
+amount = 10
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_bxo2r")
+draw_pass_1 = SubResource("BoxMesh_hlwdc")
+
 [node name="PickableObject2" parent="." instance=ExtResource("1_vhgvf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.678, 0)
 freeze = true
+
+[node name="Area3D" type="Area3D" parent="PickableObject2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickableObject2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.977324, -0.211751, 0, 0.211751, 0.977324, 0.0588973, -0.0573388, 0.146776)
+shape = SubResource("BoxShape3D_8wrp7")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.897004, 0)
@@ -106,5 +149,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Quiver/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_nb5dp")
 
+[connection signal="area_exited" from="PickableObject2/Area3D" to="PickableObject/Area3D/CollisionShape3D" method="_on_area_3d_area_exited"]
 [connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
