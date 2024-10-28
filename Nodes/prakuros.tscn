@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://j1fbb0hwsg4l"]
+
+[ext_resource type="PackedScene" uid="uid://jcnnvkqpc3bb" path="res://models/prakuros.glb" id="1_2qnl8"]
+
+[node name="Prakuros" type="Node3D"]
+
+[node name="prakuros" parent="." instance=ExtResource("1_2qnl8")]
