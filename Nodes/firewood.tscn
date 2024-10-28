@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://56kpdn0td17j"]
+[gd_scene load_steps=6 format=4 uid="uid://cpij78wq6quyx"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_6vtb5"]
 
@@ -46,10 +46,11 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_g6eqg")
 
 [node name="PickableObject" type="RigidBody3D"]
-collision_layer = 8388608
+collision_layer = 8388612
 collision_mask = 196615
 freeze_mode = 1
 script = ExtResource("1_6vtb5")
+release_mode = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ajckj")
