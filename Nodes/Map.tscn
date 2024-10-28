@@ -40,8 +40,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cej10")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ey84w"]
-points = PackedVector3Array(-100, 0, -100, -100, 0, 100, 100, 0, -100, 100, 0, 100)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ck5dx"]
+size = Vector3(200, 1, 200)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ista0"]
 resource_name = "Material.001"
@@ -7059,7 +7059,8 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="aplinka/Plane"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="aplinka/Plane/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_ey84w")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_ck5dx")
 
 [node name="Cylinder_104" type="MeshInstance3D" parent="aplinka"]
 transform = Transform3D(0.119407, 0.171353, 0.368294, 0.350387, -0.237655, -0.00302951, 0.205502, 0.305645, -0.208832, -0.431081, 0.686014, -3.33391)
