@@ -1,14 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbielna4bcyd8"]
+[gd_scene load_steps=13 format=3 uid="uid://dbielna4bcyd8"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_o134j"]
-[ext_resource type="PackedScene" uid="uid://kagvjud7va5x" path="res://Nodes/player.tscn" id="2_35cl7"]
+[ext_resource type="PackedScene" uid="uid://5sdnauxhmjio" path="res://Nodes/player.tscn" id="2_35cl7"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_q17wb"]
-[ext_resource type="PackedScene" uid="uid://pe0oenduurww" path="res://Nodes/level_1.tscn" id="4_cu0xs"]
-[ext_resource type="PackedScene" uid="uid://dlnyg3qgf22oj" path="res://Nodes/level_2.tscn" id="5_kx83n"]
-[ext_resource type="PackedScene" uid="uid://dehsapf8wlj2l" path="res://Nodes/level_3.tscn" id="6_rk0vx"]
-[ext_resource type="PackedScene" uid="uid://d1f7gkyq3vsj4" path="res://Nodes/level_4.tscn" id="7_1l7nn"]
+[ext_resource type="PackedScene" path="res://Nodes/level_1.tscn" id="4_cu0xs"]
+[ext_resource type="PackedScene" path="res://Nodes/level_2.tscn" id="5_kx83n"]
+[ext_resource type="PackedScene" path="res://Nodes/level_3.tscn" id="6_rk0vx"]
+[ext_resource type="PackedScene" path="res://Nodes/level_4.tscn" id="7_1l7nn"]
 [ext_resource type="PackedScene" uid="uid://7r3or0dcg4dn" path="res://Nodes/Map.tscn" id="8_j031r"]
 [ext_resource type="PackedScene" uid="uid://dnmc6a1ew86g8" path="res://Nodes/quiver.tscn" id="9_vt20w"]
+[ext_resource type="PackedScene" uid="uid://b5aibppr5lj1e" path="res://Nodes/campfire.tscn" id="10_556h2"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="11_vn6s0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mx7oe"]
 size = Vector3(150, 150, 30)
@@ -57,3 +59,8 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="Quiver" parent="." instance=ExtResource("9_vt20w")]
 transform = Transform3D(0.753231, 0, -0.657757, 0, 1, 0, 0.657757, 0, 0.753231, -2.80971, 0.179847, -2.14519)
+
+[node name="Campfire" parent="." instance=ExtResource("10_556h2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.58616, -1.43051e-06, 2.61314)
+
+[node name="PickableObject" parent="." instance=ExtResource("11_vn6s0")]

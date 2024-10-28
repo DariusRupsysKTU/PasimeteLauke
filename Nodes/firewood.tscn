@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=4 uid="uid://56kpdn0td17j"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_6vtb5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ajckj"]
+radius = 0.15
+height = 1.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sliiy"]
+resource_name = "Material.003"
+cull_mode = 2
+albedo_color = Color(0.414269, 0.191521, 0.0488131, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g6eqg"]
+_surfaces = [{
+"aabb": AABB(-0.537725, -3.51355, -3.88969, 1.07556, 1.24195, 5.49391),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray("AAACAAEAAAADAAIAAwAEAAIAAwAFAAQABQAGAAQABQAHAAYABwAIAAYABwAJAAgACQAKAAgACQALAAoACwABAAoACwAAAAEACwADAAAAAwAHAAUABwALAAkAAwALAAcACgAGAAgABgACAAQAAgAKAAEABgAKAAIA"),
+"lods": [0.606198, PackedByteArray("AwAEAAIAAwAFAAQABQAGAAQABQAHAAYABwAIAAYABwAJAAgACQACAAgACQADAAIAAwAHAAUABwADAAkAAgAGAAgABgACAAQA")],
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/38AAP//AAD/f0ocAAAAALTjJE4AAAAA////P///AAC049qxAAAAAP///7///wAA/3+040IIAAD/f/////8AAEoc2rEAAAAAAAD/v///AABKHCROAAAAAAAA/z///wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_r3xpf"]
+resource_name = "lauzaviete_Cylinder_003"
+_surfaces = [{
+"aabb": AABB(-0.537725, -3.51355, -3.88969, 1.07556, 1.24195, 5.49391),
+"format": 34896613383,
+"index_count": 60,
+"index_data": PackedByteArray("AgAHAAUAAgAKAAcACwAOAAgACwARAA4AEAAUAA0AEAAXABQAFQAZABIAFQAcABkAGwAeABgAGwAhAB4AIgADAB8AIgAAAAMAIwAJAAEACQAWAA8AFgAjAB0ACQAjABYAIAATABoAEwAGAAwABgAgAAQAEwAgAAYA"),
+"lods": [0.606198, PackedByteArray("JwAOACQAJwARAA4AEAApAA0AEAAqACkAFQAZABIAFQAcABkALAAlACsALAAoACYACQAWAA8AFgAJAB0ABgATABoAEwAGAAwA")],
+"material": SubResource("StandardMaterial3D_sliiy"),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 45,
+"vertex_data": PackedByteArray("/38AAP//7ej/fwAA////v/9/AAD//775/39KHAAA7ej/f0ocAACF/P9/ShwAAL75tOMkTgAAhfy04yROAAC++bTjJE4AAP//////P////7////8///+++f///z//////tOPasQAAhfy049qxAACW+LTj2rEAAP//////v////7////+///+W+P///7///////3+040IIOur/f7TjQgiF/P9/tONCCJb4/3//////Our/f///////v/9//////5b4ShzasQAA4MBKHNqxAAA66koc2rEAAIX8AAD/v///4MAAAP+///866gAA/7////+/ShwkTgAA4MBKHCROAADt6EocJE4AAIX8AAD/P///4MAAAP8////t6AAA/z////+/tOMkTgAA//+04yROAABH3rTjJE4AAHDs////P/////////8////57P9/tONCCP///3////////9KHNqxAAD0wgAA/7///w/Fg8DN+P9//393ltRMg8DN+HDBoz13ltRMcMGjPXeW1EytwPl//3//f3eW1EytwPl/cMGjPQs0YRWtwPl//3//fws0YRWtwPl/oneBvnDBoz0LNGEVoneBvv9//38LNGEV93/v/6J3gb5wwaM993/v/6J3gb7/f/9/93/v/4PAzfhwwaM993/v/4PAzfj/f/9/gbbKU25x9fd8cY3bgbbKU9twvdjYe2Nk2HtjZD9YUewcTc/m")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_g6eqg")
+
+[node name="PickableObject" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 196615
+freeze_mode = 1
+script = ExtResource("1_6vtb5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ajckj")
+
+[node name="Cylinder_004" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.28, 0, 0, 0, -1.22392e-08, -0.28, 0, 0.28, -1.22392e-08, 0, -0.3, 0.8)
+mesh = SubResource("ArrayMesh_r3xpf")
+skeleton = NodePath("")

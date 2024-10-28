@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=4 uid="uid://dnmc6a1ew86g8"]
 
 [ext_resource type="Script" path="res://scripts/quiver.gd" id="1_d74uo"]
-[ext_resource type="PackedScene" uid="uid://by4saalb13w8v" path="res://Nodes/titnagas1.tscn" id="1_vhgvf"]
+[ext_resource type="PackedScene" path="res://Nodes/titnagas1.tscn" id="1_vhgvf"]
 [ext_resource type="Script" path="res://scripts/titnago_collision.gd" id="3_1jbsw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8wrp7"]
