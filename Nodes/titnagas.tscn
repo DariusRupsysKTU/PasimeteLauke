@@ -82,7 +82,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ff6m2")
 
 [node name="titnagas" type="Node3D"]
-transform = Transform3D(0.275, 0, 0, 0, 0.275, 0, 0, 0, 0.275, 0, 0, 0)
+transform = Transform3D(0.175, 0, 0, 0, 0.175, 0, 0, 0, 0.175, 0, 0, 0)
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_0nj80")

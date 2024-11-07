@@ -18,11 +18,11 @@ spread = 60.723
 initial_velocity_min = 2.0
 initial_velocity_max = 2.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qytjc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nnkw"]
 albedo_color = Color(1, 1, 0.298039, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_hlwdc"]
-material = SubResource("StandardMaterial3D_qytjc")
+material = SubResource("StandardMaterial3D_3nnkw")
 size = Vector3(0.05, 0.05, 0.05)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ctgxe"]

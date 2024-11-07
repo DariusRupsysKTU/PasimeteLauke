@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbielna4bcyd8"]
+[gd_scene load_steps=19 format=3 uid="uid://dbielna4bcyd8"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_o134j"]
 [ext_resource type="PackedScene" uid="uid://5sdnauxhmjio" path="res://Nodes/player.tscn" id="2_35cl7"]
@@ -9,10 +9,32 @@
 [ext_resource type="PackedScene" uid="uid://d1f7gkyq3vsj4" path="res://Nodes/level_4.tscn" id="7_1l7nn"]
 [ext_resource type="PackedScene" uid="uid://7r3or0dcg4dn" path="res://Nodes/Map.tscn" id="8_j031r"]
 [ext_resource type="PackedScene" uid="uid://dnmc6a1ew86g8" path="res://Nodes/quiver.tscn" id="9_vt20w"]
-[ext_resource type="PackedScene" path="res://Nodes/campfire.tscn" id="10_556h2"]
+[ext_resource type="PackedScene" uid="uid://b5aibppr5lj1e" path="res://Nodes/campfire.tscn" id="10_556h2"]
+[ext_resource type="PackedScene" uid="uid://by4saalb13w8v" path="res://Nodes/titnagas1.tscn" id="11_r007h"]
+[ext_resource type="Script" path="res://scripts/titnago_collision.gd" id="12_p0wy7"]
+[ext_resource type="PackedScene" uid="uid://j1fbb0hwsg4l" path="res://Nodes/prakuros.tscn" id="13_4ffbb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mx7oe"]
 size = Vector3(150, 150, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q8kcl"]
+size = Vector3(0.108986, 0.302321, 0.0269775)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_birog"]
+particle_flag_rotate_y = true
+angle_min = 1.07288e-05
+angle_max = 90.0
+direction = Vector3(0, -1, 1)
+spread = 60.723
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qytjc"]
+albedo_color = Color(1, 1, 0.298039, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6mcy2"]
+material = SubResource("StandardMaterial3D_qytjc")
+size = Vector3(0.05, 0.05, 0.05)
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_o134j")
@@ -61,3 +83,40 @@ transform = Transform3D(0.753231, 0, -0.657757, 0, 1, 0, 0.657757, 0, 0.753231, 
 
 [node name="Campfire" parent="." instance=ExtResource("10_556h2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.58616, -1.43051e-06, 2.61314)
+
+[node name="PickableObject" parent="." instance=ExtResource("11_r007h")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 5.9666, 0.0136935, 0.652326)
+freeze = true
+
+[node name="Area3D" type="Area3D" parent="PickableObject"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickableObject/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.977324, -0.211751, 0, 0.211751, 0.977324, 0.0588973, -0.203338, 0.146776)
+shape = SubResource("BoxShape3D_q8kcl")
+script = ExtResource("12_p0wy7")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="PickableObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.172669, -0.25094)
+emitting = false
+amount = 10
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_birog")
+draw_pass_1 = SubResource("BoxMesh_6mcy2")
+
+[node name="PickableObject2" parent="." instance=ExtResource("11_r007h")]
+transform = Transform3D(-0.0811383, 2.18557e-08, 0.996703, 0.996703, -3.78552e-08, 0.0811383, 3.95037e-08, 1, -1.87121e-08, 4.07551, 0.0657747, -4.13716)
+freeze = true
+
+[node name="Area3D" type="Area3D" parent="PickableObject2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickableObject2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.977324, -0.211751, 0, 0.211751, 0.977324, 0.0588973, -0.0573388, 0.146776)
+shape = SubResource("BoxShape3D_q8kcl")
+
+[node name="Prakuros" parent="." instance=ExtResource("13_4ffbb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36052, 0.0185052, 1.57228)
+freeze = true
+
+[connection signal="area_exited" from="PickableObject2/Area3D" to="PickableObject/Area3D/CollisionShape3D" method="_on_area_3d_area_exited"]

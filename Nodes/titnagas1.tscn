@@ -94,15 +94,15 @@ script = ExtResource("1_fsmjv")
 release_mode = 0
 
 [node name="Cube" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 0, 0, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_0nj80")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 0, 0, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_4gjxp")
 
 [node name="Cube_001" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 0, 0, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_r2foi")
 skeleton = NodePath("")
