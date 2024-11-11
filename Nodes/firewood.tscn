@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://cpij78wq6quyx"]
+[gd_scene load_steps=10 format=4 uid="uid://cpij78wq6quyx"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_6vtb5"]
+[ext_resource type="AudioStream" uid="uid://chnic2i03tyfb" path="res://SFX/rock-pick.mp3" id="2_kynru"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/audio/pickable_audio.gd" id="3_n6eui"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/audio/pickable_audio_type.gd" id="4_4qici"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ajckj"]
 radius = 0.15
@@ -45,6 +48,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_g6eqg")
 
+[sub_resource type="Resource" id="Resource_r5pdn"]
+script = ExtResource("4_4qici")
+name = ""
+grab_sound = ExtResource("2_kynru")
+
 [node name="PickableObject" type="RigidBody3D"]
 collision_layer = 8388612
 collision_mask = 196615
@@ -59,3 +67,8 @@ shape = SubResource("CapsuleShape3D_ajckj")
 transform = Transform3D(0.28, 0, 0, 0, -1.22392e-08, -0.28, 0, 0.28, -1.22392e-08, 0, -0.3, 0.8)
 mesh = SubResource("ArrayMesh_r3xpf")
 skeleton = NodePath("")
+
+[node name="XRToolsPickableAudio" type="AudioStreamPlayer3D" parent="."]
+pitch_scale = 0.5
+script = ExtResource("3_n6eui")
+pickable_audio_type = SubResource("Resource_r5pdn")
