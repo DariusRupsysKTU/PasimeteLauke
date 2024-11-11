@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://b5aibppr5lj1e"]
+[gd_scene load_steps=35 format=4 uid="uid://b5aibppr5lj1e"]
 
 [ext_resource type="Script" path="res://scripts/campfier_building.gd" id="1_o503u"]
 
@@ -146,6 +146,39 @@ points = PackedVector3Array(1.33759, 0.484937, -3.9069, 1.20158, 0.0367799, -4.1
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w6gxq"]
 points = PackedVector3Array(1.33759, 0.484937, -3.9069, 1.20158, 0.0367799, -4.15275, 1.06575, 0.483972, -4.43605, 1.12067, 0.974918, -4.09408, 1.22586, 0.857811, -3.62708, 1.32847, 0.484937, -3.35424, 1.3097, -0.0286903, -3.62778, 0.740875, -0.04172, -4.43605, 0.477982, 0.484133, -4.57552, 0.750516, 0.925694, -4.46791, 0.640332, 1.3346, -4.12698, 0.965548, 1.27299, -3.62708, 1.15407, 1.00098, -3.13641, 1.20158, 0.0367799, -3.10124, 0.739154, -0.0373768, -2.82595, 0.391728, -0.152392, -3.2717, 0.809396, -0.115072, -3.88339, 0.203554, 0.0398362, -4.47174, 0.356262, -0.111373, -4.01363, -0.210327, -0.04172, -4.12698, -0.0412627, 0.484454, -4.34655, 0.244873, 0.949984, -4.34429, 0.0525663, 1.3346, -3.93615, 0.477982, 1.48388, -3.62708, 0.640332, 1.3346, -3.12701, 0.749828, 0.921673, -2.7967, 1.03028, 0.48365, -2.88359, 0.500535, 0.487189, -2.8559, 0.304613, 0.138926, -3.01801, 0.0172729, 0.100963, -3.3074, -0.276093, 0.103376, -3.64589, 0.0861382, -0.159309, -3.65895, -0.421227, 0.484454, -3.92379, -0.211188, 0.9117, -4.13169, -0.302779, 0.970092, -3.63335, 0.0525663, 1.3346, -3.31802, 0.295661, 0.903978, -3.01157, -0.225305, 0.485902, -3.4258, -0.0176763, 0.815505, -3.28198)
+
+[sub_resource type="Gradient" id="Gradient_tc8a8"]
+offsets = PackedFloat32Array(0, 0.456731, 1)
+colors = PackedColorArray(1, 1, 0, 1, 1, 0.831373, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s2r3w"]
+gradient = SubResource("Gradient_tc8a8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ma6n7"]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 0.5
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+velocity_pivot = Vector3(0, 2.735, 0)
+direction = Vector3(0, 1.515, 0)
+spread = 0.0
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, 0, 0)
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 3.0
+color = Color(1, 0.576471, 0, 1)
+color_ramp = SubResource("GradientTexture1D_s2r3w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twtpg"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_m38n0"]
+material = SubResource("StandardMaterial3D_twtpg")
+radius = 0.1
+height = 0.2
 
 [node name="Campfire" type="Node3D"]
 
@@ -423,6 +456,14 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="lauzaviete/Icosphere_014/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_w6gxq")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.524146, 0)
+emitting = false
+amount = 273
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ma6n7")
+draw_pass_1 = SubResource("SphereMesh_m38n0")
 
 [connection signal="body_entered" from="lauzaviete/Cylinder_004/XRToolsInteractableArea" to="lauzaviete/Cylinder_004/XRToolsInteractableArea" method="_on_body_entered"]
 [connection signal="body_entered" from="lauzaviete/Cylinder_005/XRToolsInteractableArea" to="lauzaviete/Cylinder_005/XRToolsInteractableArea" method="_on_body_entered"]
