@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/firelighting.gd" id="3_3opdg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3p1y5"]
-size = Vector3(0.66, 0.26, 1.18)
+size = Vector3(0.271, 0.0582461, 0.469557)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rixk8"]
 resource_name = "Material.001"
@@ -309,11 +309,11 @@ script = ExtResource("1_c448w")
 release_mode = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0102429, -0.0179251)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0139356, 0.0322026, -0.0247323)
 shape = SubResource("BoxShape3D_3p1y5")
 
 [node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="Plane" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.994621, 0.103576, 0, -0.103576, 0.994621, 0, 0.0138832, -0.000362428)
