@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dbielna4bcyd8"]
+[gd_scene load_steps=21 format=3 uid="uid://dbielna4bcyd8"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_o134j"]
 [ext_resource type="PackedScene" uid="uid://5sdnauxhmjio" path="res://Nodes/player.tscn" id="2_35cl7"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://scripts/titnago_collision.gd" id="12_p0wy7"]
 [ext_resource type="AudioStream" uid="uid://cv73dba202c5h" path="res://SFX/fire-making-grind-stone-flint-sound-effect-222014671_nw_prev.mp3" id="13_4d31k"]
 [ext_resource type="PackedScene" uid="uid://j1fbb0hwsg4l" path="res://Nodes/prakuros.tscn" id="13_4ffbb"]
+[ext_resource type="PackedScene" uid="uid://cmfca38vcregi" path="res://Nodes/cart.tscn" id="15_e5w1u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mx7oe"]
 size = Vector3(150, 150, 30)
@@ -124,5 +125,8 @@ shape = SubResource("BoxShape3D_q8kcl")
 [node name="Prakuros" parent="." instance=ExtResource("13_4ffbb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36052, 0.0185052, 1.57228)
 freeze = true
+
+[node name="Cart" parent="." instance=ExtResource("15_e5w1u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5)
 
 [connection signal="area_exited" from="Flint2/Area3D" to="Flint1/Area3D/CollisionShape3D" method="_on_area_3d_area_exited"]
