@@ -1,6 +1,8 @@
-[gd_scene load_steps=22 format=4 uid="uid://j1fbb0hwsg4l"]
+[gd_scene load_steps=24 format=4 uid="uid://j1fbb0hwsg4l"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_c448w"]
+[ext_resource type="AudioStream" uid="uid://cug5a046hwor4" path="res://SFX/creeper.mp3" id="2_i4nsg"]
+[ext_resource type="Script" path="res://scripts/firelighting.gd" id="3_3opdg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3p1y5"]
 size = Vector3(0.66, 0.26, 1.18)
@@ -357,3 +359,7 @@ skeleton = NodePath("")
 transform = Transform3D(0.760449, -0.157922, -0.135417, 0.178383, 0.759052, 0.116528, 0.107036, -0.143038, 0.767882, 0.00424804, 0.0172688, -0.0628351)
 mesh = SubResource("ArrayMesh_l0rhw")
 skeleton = NodePath("")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_i4nsg")
+script = ExtResource("3_3opdg")

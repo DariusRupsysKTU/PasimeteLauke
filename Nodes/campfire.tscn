@@ -288,7 +288,6 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="lauzaviete/Icosphere_002"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="lauzaviete/Icosphere_002/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_5y6cr")
 
 [node name="Icosphere_001" type="MeshInstance3D" parent="lauzaviete"]
@@ -310,7 +309,6 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="lauzaviete/Icosphere_003"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="lauzaviete/Icosphere_003/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_rmmr5")
 
 [node name="Icosphere_004" type="MeshInstance3D" parent="lauzaviete"]
@@ -331,7 +329,6 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="lauzaviete/Icosphere_005"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="lauzaviete/Icosphere_005/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_h8w5q")
 
 [node name="Icosphere_006" type="MeshInstance3D" parent="lauzaviete"]
@@ -352,7 +349,6 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="lauzaviete/Icosphere_007"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="lauzaviete/Icosphere_007/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_rhbla")
 
 [node name="Icosphere_008" type="MeshInstance3D" parent="lauzaviete"]
@@ -385,7 +381,6 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="lauzaviete/Icosphere_010"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="lauzaviete/Icosphere_010/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_3nlmc")
 
 [node name="Icosphere_011" type="MeshInstance3D" parent="lauzaviete"]
@@ -396,7 +391,6 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="lauzaviete/Icosphere_011"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="lauzaviete/Icosphere_011/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_dcj4w")
 
 [node name="Icosphere_012" type="MeshInstance3D" parent="lauzaviete"]
@@ -428,7 +422,6 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="lauzaviete/Icosphere_014"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="lauzaviete/Icosphere_014/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_w6gxq")
 
 [connection signal="body_entered" from="lauzaviete/Cylinder_004/XRToolsInteractableArea" to="lauzaviete/Cylinder_004/XRToolsInteractableArea" method="_on_body_entered"]

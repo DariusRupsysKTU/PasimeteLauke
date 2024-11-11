@@ -1,17 +1,18 @@
-[gd_scene load_steps=19 format=3 uid="uid://dbielna4bcyd8"]
+[gd_scene load_steps=20 format=3 uid="uid://dbielna4bcyd8"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_o134j"]
 [ext_resource type="PackedScene" uid="uid://5sdnauxhmjio" path="res://Nodes/player.tscn" id="2_35cl7"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_q17wb"]
-[ext_resource type="PackedScene" uid="uid://pe0oenduurww" path="res://Nodes/level_1.tscn" id="4_cu0xs"]
-[ext_resource type="PackedScene" uid="uid://dlnyg3qgf22oj" path="res://Nodes/level_2.tscn" id="5_kx83n"]
-[ext_resource type="PackedScene" uid="uid://dehsapf8wlj2l" path="res://Nodes/level_3.tscn" id="6_rk0vx"]
-[ext_resource type="PackedScene" uid="uid://d1f7gkyq3vsj4" path="res://Nodes/level_4.tscn" id="7_1l7nn"]
+[ext_resource type="PackedScene" path="res://Nodes/level_1.tscn" id="4_cu0xs"]
+[ext_resource type="PackedScene" path="res://Nodes/level_2.tscn" id="5_kx83n"]
+[ext_resource type="PackedScene" path="res://Nodes/level_3.tscn" id="6_rk0vx"]
+[ext_resource type="PackedScene" path="res://Nodes/level_4.tscn" id="7_1l7nn"]
 [ext_resource type="PackedScene" uid="uid://7r3or0dcg4dn" path="res://Nodes/Map.tscn" id="8_j031r"]
 [ext_resource type="PackedScene" uid="uid://dnmc6a1ew86g8" path="res://Nodes/quiver.tscn" id="9_vt20w"]
 [ext_resource type="PackedScene" uid="uid://b5aibppr5lj1e" path="res://Nodes/campfire.tscn" id="10_556h2"]
 [ext_resource type="PackedScene" uid="uid://by4saalb13w8v" path="res://Nodes/titnagas1.tscn" id="11_r007h"]
 [ext_resource type="Script" path="res://scripts/titnago_collision.gd" id="12_p0wy7"]
+[ext_resource type="AudioStream" uid="uid://cv73dba202c5h" path="res://SFX/fire-making-grind-stone-flint-sound-effect-222014671_nw_prev.mp3" id="13_4d31k"]
 [ext_resource type="PackedScene" uid="uid://j1fbb0hwsg4l" path="res://Nodes/prakuros.tscn" id="13_4ffbb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mx7oe"]
@@ -84,18 +85,18 @@ transform = Transform3D(0.753231, 0, -0.657757, 0, 1, 0, 0.657757, 0, 0.753231, 
 [node name="Campfire" parent="." instance=ExtResource("10_556h2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.58616, -1.43051e-06, 2.61314)
 
-[node name="PickableObject" parent="." instance=ExtResource("11_r007h")]
+[node name="Flint1" parent="." instance=ExtResource("11_r007h")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 5.9666, 0.0136935, 0.652326)
 freeze = true
 
-[node name="Area3D" type="Area3D" parent="PickableObject"]
+[node name="Area3D" type="Area3D" parent="Flint1"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PickableObject/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Flint1/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 0.977324, -0.211751, 0, 0.211751, 0.977324, 0.0588973, -0.203338, 0.146776)
 shape = SubResource("BoxShape3D_q8kcl")
 script = ExtResource("12_p0wy7")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="PickableObject"]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Flint1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.172669, -0.25094)
 emitting = false
 amount = 10
@@ -105,13 +106,18 @@ explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_birog")
 draw_pass_1 = SubResource("BoxMesh_6mcy2")
 
-[node name="PickableObject2" parent="." instance=ExtResource("11_r007h")]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Flint1"]
+stream = ExtResource("13_4d31k")
+volume_db = -5.0
+max_db = 2.0
+
+[node name="Flint2" parent="." instance=ExtResource("11_r007h")]
 transform = Transform3D(-0.0811383, 2.18557e-08, 0.996703, 0.996703, -3.78552e-08, 0.0811383, 3.95037e-08, 1, -1.87121e-08, 4.07551, 0.0657747, -4.13716)
 freeze = true
 
-[node name="Area3D" type="Area3D" parent="PickableObject2"]
+[node name="Area3D" type="Area3D" parent="Flint2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PickableObject2/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Flint2/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 0.977324, -0.211751, 0, 0.211751, 0.977324, 0.0588973, -0.0573388, 0.146776)
 shape = SubResource("BoxShape3D_q8kcl")
 
@@ -119,4 +125,4 @@ shape = SubResource("BoxShape3D_q8kcl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36052, 0.0185052, 1.57228)
 freeze = true
 
-[connection signal="area_exited" from="PickableObject2/Area3D" to="PickableObject/Area3D/CollisionShape3D" method="_on_area_3d_area_exited"]
+[connection signal="area_exited" from="Flint2/Area3D" to="Flint1/Area3D/CollisionShape3D" method="_on_area_3d_area_exited"]
