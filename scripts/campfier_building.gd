@@ -17,4 +17,5 @@ func _on_body_entered(body: Node3D) -> void:
 		body.process_mode = Node.PROCESS_MODE_DISABLED
 		body.hide()
 		get_parent_node_3d().show()
+		Globals.ActiveFireWoods += 1
 	active = false

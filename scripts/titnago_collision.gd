@@ -27,7 +27,7 @@ func _on_area_3d_area_exited(area: Area3D) -> void:
 					prakuros_sound.lighting()
 					var destination = prakuros.global_transform.origin.distance_to(fire.global_transform.origin)
 					print(destination)
-					if destination <= 0.75:
+					if destination <= 0.75 and Globals.ActiveFireWoods >= 8:
 						fire.emitting = true
 					print("Ugnis")
 	pass # Replace with function body.
