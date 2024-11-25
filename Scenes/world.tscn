@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dbielna4bcyd8"]
+[gd_scene load_steps=22 format=3 uid="uid://dbielna4bcyd8"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_o134j"]
 [ext_resource type="PackedScene" uid="uid://5sdnauxhmjio" path="res://Nodes/player.tscn" id="2_35cl7"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://cv73dba202c5h" path="res://SFX/fire-making-grind-stone-flint-sound-effect-222014671_nw_prev.mp3" id="13_4d31k"]
 [ext_resource type="PackedScene" uid="uid://j1fbb0hwsg4l" path="res://Nodes/prakuros.tscn" id="13_4ffbb"]
 [ext_resource type="PackedScene" uid="uid://cmfca38vcregi" path="res://Nodes/cart.tscn" id="15_e5w1u"]
+[ext_resource type="PackedScene" uid="uid://cpij78wq6quyx" path="res://Nodes/firewood.tscn" id="16_ku72k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mx7oe"]
 size = Vector3(150, 150, 30)
@@ -82,6 +83,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="Quiver" parent="." instance=ExtResource("9_vt20w")]
 transform = Transform3D(0.753231, 0, -0.657757, 0, 1, 0, 0.657757, 0, 0.753231, -2.80971, 0.179847, -2.14519)
+visible = false
 
 [node name="Campfire" parent="." instance=ExtResource("10_556h2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.58616, -1.43051e-06, 2.61314)
@@ -128,5 +130,29 @@ freeze = true
 
 [node name="Cart" parent="." instance=ExtResource("15_e5w1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5)
+
+[node name="PickableObject" parent="." instance=ExtResource("16_ku72k")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.711119, 0.162902, 10.1591)
+
+[node name="PickableObject2" parent="." instance=ExtResource("16_ku72k")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -5.58506, 0.177847, 8.95829)
+
+[node name="PickableObject3" parent="." instance=ExtResource("16_ku72k")]
+transform = Transform3D(-3.20116e-08, 0.732341, -0.680938, -1, -4.37114e-08, 0, -2.97648e-08, 0.680938, 0.732341, -8.4416, 0.162902, 3.21954)
+
+[node name="PickableObject4" parent="." instance=ExtResource("16_ku72k")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -8.92925, 0.162902, 9.18381)
+
+[node name="PickableObject5" parent="." instance=ExtResource("16_ku72k")]
+transform = Transform3D(-3.73317e-08, 0.854051, 0.52019, -1, -4.37114e-08, 0, 2.27382e-08, -0.52019, 0.854051, -3.01941, 0.162902, 11.542)
+
+[node name="PickableObject6" parent="." instance=ExtResource("16_ku72k")]
+transform = Transform3D(-2.42905e-08, 0.555701, 0.831382, -1, -4.37114e-08, 0, 3.63409e-08, -0.831382, 0.555701, -6.81263, 0.162902, 12.5706)
+
+[node name="PickableObject7" parent="." instance=ExtResource("16_ku72k")]
+transform = Transform3D(-3.54224e-08, 0.810369, -0.58592, -1, -4.37114e-08, 0, -2.56114e-08, 0.58592, 0.810369, -2.52023, 0.162902, 9.3392)
+
+[node name="PickableObject8" parent="." instance=ExtResource("16_ku72k")]
+transform = Transform3D(-1.38402e-08, 0.316626, -0.94855, -1, -4.37114e-08, 0, -4.14625e-08, 0.94855, 0.316626, -8.88649, 0.162902, 5.81847)
 
 [connection signal="area_exited" from="Flint2/Area3D" to="Flint1/Area3D/CollisionShape3D" method="_on_area_3d_area_exited"]
