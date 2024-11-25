@@ -38,3 +38,6 @@ func _on_body_exited(body: Node3D) -> void:
 		print(wn.name)
 		body.reparent(wn, true)
 		#body.collision_layer = 3
+
+func unfreeze(body: Node3D) -> void:
+	pass
