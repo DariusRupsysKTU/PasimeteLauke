@@ -9,7 +9,6 @@ signal pointer_event(event)
 func is_xr_class(name : String) -> bool:
 	return name == "XRToolsInteractableArea"
 
-
 var active = true
 func _on_body_entered(body: Node3D) -> void:
 	if(active):

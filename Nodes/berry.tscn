@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnfixcp1a46ve"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_8nadv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pvkk8"]
+radius = 0.025
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fagba"]
+albedo_color = Color(0.931501, 0, 0.103332, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_lba7a"]
+material = SubResource("StandardMaterial3D_fagba")
+radius = 0.025
+height = 0.05
+
+[node name="Berry" type="RigidBody3D"]
+collision_layer = 8388612
+collision_mask = 196615
+mass = 0.1
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_8nadv")
+release_mode = 0
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_pvkk8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_lba7a")

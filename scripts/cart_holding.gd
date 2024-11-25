@@ -16,25 +16,25 @@ func _process(delta: float) -> void:
 				body.freeze = true
 				body.freeze_mode = RigidBody3D.FREEZE_MODE_STATIC
 				flag=true
-				await body.reparent(self)
-				flag = false
+				body.reparent(self)
 
 			bodies[body] = Transform3D(body.transform)
 
 func _on_body_entered(body: Node3D) -> void:
 	print(body.name)
-	if body != self:
+	if body != self and !flag:
 		bodies[body] = Transform3D(body.transform)
+	elif flag:
+		flag = false
 
 func _on_body_exited(body: Node3D) -> void:
-	if(flag):
-		flag = false
-		pass
-	print(body.name)
-	bodies[body] = null
-	body.freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
-	body.freeze = false
-	var wn = get_node("/root/world")
-	print(wn.name)
-	body.reparent(wn, true)
-	#body.collision_layer = 3
+	if(!flag):
+			
+		print(body.name)
+		bodies[body] = null
+		body.freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
+		body.freeze = false
+		var wn = get_node("/root/world")
+		print(wn.name)
+		body.reparent(wn, true)
+		#body.collision_layer = 3
