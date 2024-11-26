@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b6fdntp4f0hgm"]
+[gd_scene load_steps=12 format=3 uid="uid://dqosqqbcx70ng"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_127k5"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_k8m6f"]
@@ -26,7 +26,7 @@ script = ExtResource("4_wecai")
 closed_pose = ExtResource("7_ircdv")
 
 [node name="PickableObject" type="RigidBody3D"]
-collision_layer = 4
+collision_layer = 262148
 collision_mask = 196615
 freeze_mode = 1
 script = ExtResource("1_127k5")

@@ -1,8 +1,8 @@
 extends Node3D
 @onready var rabbit = preload("res://Nodes/rabbit.tscn")
-@onready var trap: Node3D = $"../Trap"
+@onready var trap: Node3D = $"../Trap2"
 
-var timer := 10.0
+var timer := 120.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

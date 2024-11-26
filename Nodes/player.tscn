@@ -65,6 +65,7 @@ step_turn_delay = 1.0
 step_turn_angle = 30.0
 
 [node name="FunctionPickup" parent="XROrigin3D/righthand" instance=ExtResource("6_sl0px")]
+grab_distance = 1.0
 ranged_distance = 10.0
 ranged_angle = 10.0
 
