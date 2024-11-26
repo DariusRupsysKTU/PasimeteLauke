@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_o134j"]
 [ext_resource type="PackedScene" uid="uid://5sdnauxhmjio" path="res://Nodes/player.tscn" id="2_35cl7"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_q17wb"]
-[ext_resource type="PackedScene" path="res://Nodes/level_1.tscn" id="4_cu0xs"]
-[ext_resource type="PackedScene" path="res://Nodes/level_2.tscn" id="5_kx83n"]
-[ext_resource type="PackedScene" path="res://Nodes/level_3.tscn" id="6_rk0vx"]
-[ext_resource type="PackedScene" path="res://Nodes/level_4.tscn" id="7_1l7nn"]
+[ext_resource type="PackedScene" uid="uid://pe0oenduurww" path="res://Nodes/level_1.tscn" id="4_cu0xs"]
+[ext_resource type="PackedScene" uid="uid://dlnyg3qgf22oj" path="res://Nodes/level_2.tscn" id="5_kx83n"]
+[ext_resource type="PackedScene" uid="uid://dehsapf8wlj2l" path="res://Nodes/level_3.tscn" id="6_rk0vx"]
+[ext_resource type="PackedScene" uid="uid://d1f7gkyq3vsj4" path="res://Nodes/level_4.tscn" id="7_1l7nn"]
 [ext_resource type="PackedScene" uid="uid://7r3or0dcg4dn" path="res://Nodes/Map.tscn" id="8_j031r"]
 [ext_resource type="PackedScene" uid="uid://dnmc6a1ew86g8" path="res://Nodes/quiver.tscn" id="9_vt20w"]
 [ext_resource type="PackedScene" uid="uid://b5aibppr5lj1e" path="res://Nodes/campfire.tscn" id="10_556h2"]
@@ -334,114 +334,151 @@ transform = Transform3D(-1.38402e-08, 0.316626, -0.94855, -1, -4.37114e-08, 0, -
 
 [node name="Berry" parent="Uogos" instance=ExtResource("17_sku2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2336, 0.964218, 2.6249)
+picked_up_layer = 131072
 
 [node name="Berry2" parent="Uogos" instance=ExtResource("17_sku2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8615, 1.07498, 3.12844)
+picked_up_layer = 131072
 
 [node name="Berry3" parent="Uogos" instance=ExtResource("17_sku2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8949, 0.606116, 2.55818)
+picked_up_layer = 131072
 
 [node name="Berry4" parent="Uogos" instance=ExtResource("17_sku2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5814, 0.855631, 2.73231)
+picked_up_layer = 131072
 
 [node name="Berry5" parent="Uogos" instance=ExtResource("17_sku2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7618, 0.587777, 2.26179)
+picked_up_layer = 131072
 
 [node name="Berry6" parent="Uogos" instance=ExtResource("17_sku2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1432, 0.995277, 2.59944)
+picked_up_layer = 131072
 
 [node name="Berry7" parent="Uogos" instance=ExtResource("17_sku2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6706, 0.34803, 2.49318)
+picked_up_layer = 131072
 
 [node name="Berry8" parent="Uogos" instance=ExtResource("17_sku2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.186, 0.287903, 3.19467)
+picked_up_layer = 131072
 
 [node name="Berry9" parent="Uogos" instance=ExtResource("17_sku2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0275, 0.774493, 3.30593)
+picked_up_layer = 131072
 
 [node name="Berry10" parent="Uogos" instance=ExtResource("17_sku2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1798, 0.44998, 3.96765)
+picked_up_layer = 131072
 
 [node name="Berry11" parent="Uogos" instance=ExtResource("17_sku2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3227, 0.333228, 4.13081)
+picked_up_layer = 131072
 
 [node name="Berry12" parent="Uogos" instance=ExtResource("17_sku2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5179, 0.864472, 3.88978)
+picked_up_layer = 131072
 
 [node name="Berry13" parent="Uogos" instance=ExtResource("17_sku2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2915, 0.33093, 3.29595)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5627, 0.800278, 3.06655)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry2" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5687, 0.258572, 2.75245)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry3" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2417, 0.317524, 3.68574)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry4" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3984, 0.757927, 3.53337)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry5" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4725, 0.714414, 4.15392)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry6" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6605, 1.00468, 3.39724)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry7" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7826, 0.846829, 2.79473)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry8" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8812, 0.280305, 2.42491)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry9" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4688, 0.472718, 2.95957)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry10" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1931, 0.379493, 2.27491)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry11" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3789, 0.735561, 2.32864)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry12" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.756, 0.96224, 2.50952)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry13" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6926, 0.179366, 2.11698)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry14" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.212, 0.241832, 2.24672)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry15" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3008, 0.720102, 2.3971)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry16" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9326, 0.31437, 2.73605)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry17" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5428, 0.637654, 2.52835)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry18" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3934, 0.83938, 2.56189)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry19" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9163, 0.738618, 2.92687)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry20" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0696, 0.472043, 3.02835)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry21" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.259, 0.172375, 3.88253)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry22" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0087, 0.903904, 3.71365)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry23" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8045, 0.940532, 3.1333)
+picked_up_layer = 131072
 
 [node name="PoisonousBerry24" parent="." instance=ExtResource("18_ejo2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1792, 0.542111, 3.48505)
+picked_up_layer = 131072
 
 [node name="RabbitHole" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1018, 0, 12.8137)
