@@ -28,11 +28,11 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	#print(body.name)
-	if body != self and body.name != "world":# and !flag:
+	if body != self and body.get_class() == "RigidBody3D":# and !flag:
 		bodies[body] = Transform3D(body.transform)
 
 func _on_body_exited(body: Node3D) -> void:
-	if(!flag):
+	if !flag and body.get_class() == "RigidBody3D":
 		print("body.freeze_mode")
 		print(body.freeze)
 		#print(body.name)
