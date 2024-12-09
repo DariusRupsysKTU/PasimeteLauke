@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://dbielna4bcyd8"]
+[gd_scene load_steps=36 format=4 uid="uid://dbielna4bcyd8"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_o134j"]
 [ext_resource type="PackedScene" uid="uid://5sdnauxhmjio" path="res://Nodes/player.tscn" id="2_35cl7"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://scripts/rabbit_hole.gd" id="19_pg2cj"]
 [ext_resource type="PackedScene" uid="uid://ce2hwmp0kk8at" path="res://Nodes/trap.tscn" id="20_glg33"]
 [ext_resource type="PackedScene" uid="uid://hm8mtbjqajt" path="res://Nodes/box.tscn" id="21_yxrlt"]
+[ext_resource type="PackedScene" uid="uid://cv3vakpgpwgx1" path="res://Nodes/stick2.tscn" id="23_7x01p"]
 [ext_resource type="PackedScene" uid="uid://dqosqqbcx70ng" path="res://Nodes/stick.tscn" id="23_scm06"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_fxjov"]
@@ -430,7 +431,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.31183, 0, -1.19128)
 [node name="PickableObject10" parent="." instance=ExtResource("23_scm06")]
 transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, 1, -4.37114e-08, 0, 3.09086e-08, 0.707107, 0.707107, -4.26266, 0.666948, -1.05695)
 
-[node name="PickableObject9" parent="." instance=ExtResource("23_scm06")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.21229, 0, -1.28275)
+[node name="PickableObject9" parent="." instance=ExtResource("23_7x01p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95986, 0, -2.49427)
 
 [connection signal="area_exited" from="Flint2/Area3D" to="Flint1/Area3D/CollisionShape3D" method="_on_area_3d_area_exited"]
