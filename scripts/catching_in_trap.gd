@@ -10,7 +10,7 @@ var dead_rabbit = preload("res://Nodes/dead_rabbit.tscn")
 var boxpart = false
 var stickpart = false
 var berrypart = false
-var active = false
+var active = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -30,7 +30,7 @@ func _on_body_entered(body: Node3D) -> void:
 		add_child(instance_box)
 		var instance_dead_rabbit = dead_rabbit.instantiate()
 		add_child(instance_dead_rabbit)
-		active=false
+		reset_trap()
 
 func build_trap(part: String) -> void:
 	print(part)
@@ -43,9 +43,13 @@ func build_trap(part: String) -> void:
 		boxpart=true
 
 func reset_trap() -> void:
+	boxpart = false
 	trap_box.hide()
 	trap_box.active=false
+	stickpart = false
 	trap_stick.hide()
 	trap_stick.active=true
-	berrypart.hide()
-	berrypart.active=true
+	berrypart = false
+	trap_berry.hide()
+	trap_berry.active=true
+	active=false

@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_2vfoa"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_pvkk8"]
-radius = 0.025
+[sub_resource type="SphereShape3D" id="SphereShape3D_2ocup"]
+margin = 0.01
+radius = 0.05
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fagba"]
 albedo_color = Color(0.931501, 0, 0.103332, 1)
@@ -22,7 +23,7 @@ radius = 0.005
 height = 0.01
 
 [node name="PoisonousBerry" type="RigidBody3D"]
-collision_layer = 9437188
+collision_layer = 9437189
 collision_mask = 1245191
 mass = 0.1
 freeze = true
@@ -32,27 +33,28 @@ picked_up_layer = 1179648
 release_mode = 0
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_pvkk8")
+shape = SubResource("SphereShape3D_2ocup")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("SphereMesh_lba7a")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0219915, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0463017, 0, 0)
 mesh = SubResource("SphereMesh_ixest")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00991353, 0.0160224, 0.0121889)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.02916, 0.0160224, 0.0331281)
 mesh = SubResource("SphereMesh_ixest")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000744, 0.0160224, -0.016457)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.000744, 0.0445451, -0.016457)
 mesh = SubResource("SphereMesh_ixest")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00991353, -0.0201992, 0.000355799)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.00143127, -0.0333085, 0.0336622)
 mesh = SubResource("SphereMesh_ixest")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0158302, -0.00298916, -0.0157079)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0181067, -0.0154253, -0.0401967)
 mesh = SubResource("SphereMesh_ixest")

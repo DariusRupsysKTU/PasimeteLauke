@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_8nadv"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pvkk8"]
-radius = 0.025
+margin = 0.01
+radius = 0.05
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fagba"]
 albedo_color = Color(0.931501, 0, 0.103332, 1)
@@ -26,4 +27,5 @@ release_mode = 0
 shape = SubResource("SphereShape3D_pvkk8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("SphereMesh_lba7a")

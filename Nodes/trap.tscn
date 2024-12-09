@@ -90,6 +90,9 @@ size = Vector3(0.630798, 0.727661, 1.1239)
 [sub_resource type="BoxShape3D" id="BoxShape3D_mefat"]
 size = Vector3(0.423895, 0.51358, 0.454541)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8xnw7"]
+size = Vector3(0.725746, 0.388382, 0.809937)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fagba"]
 albedo_color = Color(0.931501, 0, 0.103332, 1)
 
@@ -105,9 +108,6 @@ albedo_color = Color(0.933333, 0.756863, 0, 1)
 material = SubResource("StandardMaterial3D_t4f3r")
 radius = 0.005
 height = 0.01
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_8xnw7"]
-size = Vector3(0.636383, 0.744507, 0.884766)
 
 [sub_resource type="BoxMesh" id="BoxMesh_25xk6"]
 size = Vector3(0.7, 0.01, 1)
@@ -169,6 +169,10 @@ shape = SubResource("BoxShape3D_mefat")
 visible = false
 collision_mask = 1048576
 script = ExtResource("1_dhh16")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0059166, 0.139015, 0.355903)
+shape = SubResource("BoxShape3D_8xnw7")
 
 [node name="berry_meshes" type="Node3D" parent="Area3D4"]
 transform = Transform3D(0.932324, 0, -0.361625, 0, 1, 0, 0.361625, 0, 0.932324, 0, -0.0235992, 0.338373)
@@ -269,10 +273,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0158302, 0.0225638, -0.013
 mesh = SubResource("SphereMesh_ixest")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0059967, 0.317078, 0.233528)
-shape = SubResource("BoxShape3D_8xnw7")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.250382)
 mesh = SubResource("BoxMesh_25xk6")
@@ -285,3 +285,4 @@ mesh = SubResource("CylinderMesh_sii2m")
 [connection signal="body_entered" from="Area3D2" to="Area3D2" method="_on_body_entered"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area3D3" to="Area3D3" method="_on_body_entered"]
+[connection signal="body_entered" from="Area3D4" to="Area3D4" method="_on_body_entered"]
