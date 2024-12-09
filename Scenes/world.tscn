@@ -428,6 +428,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13864, 0, 11.8618)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.31183, 0, -1.19128)
 
 [node name="PickableObject9" parent="." instance=ExtResource("2_708rw")]
-transform = Transform3D(1, 0, 0, 0, 0.869555, 0.493836, 0, -0.493836, 0.869555, -4.31183, 1.26052, -1.19128)
+transform = Transform3D(1, 0, 0, 0, 0.114208, 0.993457, 0, -0.993457, 0.114208, -4.31183, 0.82239, -1.19128)
 
 [connection signal="area_exited" from="Flint2/Area3D" to="Flint1/Area3D/CollisionShape3D" method="_on_area_3d_area_exited"]
