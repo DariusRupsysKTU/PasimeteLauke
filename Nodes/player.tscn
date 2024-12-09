@@ -52,9 +52,7 @@ step_turn_delay = 1.0
 step_turn_angle = 30.0
 
 [node name="FunctionPickup" parent="XROrigin3D/righthand" instance=ExtResource("6_sl0px")]
-grab_distance = 1.0
 ranged_distance = 10.0
-ranged_angle = 1.0
 
 [node name="RightHand" parent="XROrigin3D/righthand" instance=ExtResource("6_8m5qv")]
 
@@ -74,7 +72,6 @@ strafe = true
 
 [node name="FunctionPickup" parent="XROrigin3D/lefthand" instance=ExtResource("6_sl0px")]
 ranged_distance = 10.0
-ranged_angle = 1.0
 
 [node name="LeftHand" parent="XROrigin3D/lefthand" instance=ExtResource("8_xrqtq")]
 

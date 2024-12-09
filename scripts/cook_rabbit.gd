@@ -16,7 +16,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(get_active_material(0))
+	#print(get_active_material(0))
+	if area_3d.active:
+		pass
 	if abs(prakuros.global_position.x - global_position.x) < 1 and abs(prakuros.global_position.z - global_position.z) < 1:
 		if area_3d.active == false and prakuros.global_position.y < global_position.y:
 			if gpu_particles_3d.is_emitting():
@@ -29,12 +31,11 @@ func _process(delta: float) -> void:
 						valgomas = true
 					else:
 						valgomas = false
-					print(rabbitColor)
-					print(valgomas)
+					#print(rabbitColor)
+					#print(valgomas)
 					rabbitColor.r = rabbitColor.r-0.01
 					rabbitColor.g = rabbitColor.g-0.0135
 					rabbitColor.b = rabbitColor.b-0.03
 					framer = 20
 					rabbitMaterial.albedo_color = rabbitColor
 					set_surface_override_material(0, rabbitMaterial)
-	pass
