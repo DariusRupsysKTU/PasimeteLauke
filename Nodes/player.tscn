@@ -1,11 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://5sdnauxhmjio"]
+[gd_scene load_steps=14 format=3 uid="uid://5sdnauxhmjio"]
 
 [ext_resource type="Script" path="res://scripts/eating.gd" id="1_ccuqk"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="1_sd11b"]
 [ext_resource type="Material" uid="uid://dd4aiceehffm" path="res://pointer_material_3d.tres" id="2_byw5i"]
 [ext_resource type="AudioStream" uid="uid://dceare4tjfm1k" path="res://SFX/eating-sound-effect-36186.mp3" id="2_o41hy"]
-[ext_resource type="Shader" path="res://shaders/player_camera.gdshader" id="3_hswfv"]
 [ext_resource type="Material" uid="uid://d3wss8qb0bs0w" path="res://pointer_target_material_3d.tres" id="3_y3qs6"]
+[ext_resource type="PackedScene" uid="uid://wtpox7m5vu2b" path="res://addons/godot-xr-tools/effects/fade.tscn" id="5_51v35"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_obd8x"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="6_8m5qv"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="6_fh2st"]
@@ -16,21 +16,13 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_drll1"]
 radius = 0.2
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_kkt0v"]
-size = Vector2(0.275, 0.16)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_c7uvb"]
-render_priority = 0
-shader = ExtResource("3_hswfv")
-shader_parameter/blur_center = Vector2(0.5, 0.5)
-shader_parameter/blur_power = 0.0
-shader_parameter/sampling_count = 6
-
 [node name="player" type="Node3D"]
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="Fade" parent="XROrigin3D/XRCamera3D" instance=ExtResource("5_51v35")]
 
 [node name="AudioListener3D" type="AudioListener3D" parent="XROrigin3D/XRCamera3D"]
 
@@ -43,11 +35,6 @@ shape = SubResource("SphereShape3D_drll1")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="XROrigin3D/XRCamera3D/mouth"]
 stream = ExtResource("2_o41hy")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRCamera3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.1)
-mesh = SubResource("PlaneMesh_kkt0v")
-surface_material_override/0 = SubResource("ShaderMaterial_c7uvb")
 
 [node name="righthand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2)
@@ -67,7 +54,7 @@ step_turn_angle = 30.0
 [node name="FunctionPickup" parent="XROrigin3D/righthand" instance=ExtResource("6_sl0px")]
 grab_distance = 1.0
 ranged_distance = 10.0
-ranged_angle = 10.0
+ranged_angle = 1.0
 
 [node name="RightHand" parent="XROrigin3D/righthand" instance=ExtResource("6_8m5qv")]
 
@@ -87,7 +74,7 @@ strafe = true
 
 [node name="FunctionPickup" parent="XROrigin3D/lefthand" instance=ExtResource("6_sl0px")]
 ranged_distance = 10.0
-ranged_angle = 10.0
+ranged_angle = 1.0
 
 [node name="LeftHand" parent="XROrigin3D/lefthand" instance=ExtResource("8_xrqtq")]
 
