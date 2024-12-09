@@ -1,24 +1,27 @@
 extends Area3D
 
-@onready var box: XRToolsPickable = $"../PickableObject"
-@onready var dead_rabbit: XRToolsPickable = $"../PickableObject2"
+var box = preload("res://Nodes/box.tscn")
+var dead_rabbit = preload("res://Nodes/dead_rabbit.tscn")
 
 @onready var trap_stick: Area3D = $"../Area3D2"
 @onready var trap_box: Area3D = $"../Area3D"
+@onready var trap_berry: Area3D = $"../Area3D4"
 
 var boxpart = false
 var stickpart = false
+var berrypart = false
 var active = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	box.process_mode = Node.PROCESS_MODE_DISABLED
-	box.hide()
-	dead_rabbit.process_mode = Node.PROCESS_MODE_DISABLED
-	dead_rabbit.hide()
+	pass
+	#box.process_mode = Node.PROCESS_MODE_DISABLED
+	#box.hide()
+	#dead_rabbit.process_mode = Node.PROCESS_MODE_DISABLED
+	#dead_rabbit.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if boxpart and stickpart and !active:
+	if boxpart and stickpart and berrypart and !active:
 		active = true
 		print("active")
 		print(active)
@@ -27,19 +30,26 @@ func _on_body_entered(body: Node3D) -> void:
 	if active:
 		body.process_mode = Node.PROCESS_MODE_DISABLED
 		body.hide()
-		box.process_mode = Node.PROCESS_MODE_ALWAYS
-		box.show()
-		dead_rabbit.process_mode = Node.PROCESS_MODE_ALWAYS
-		dead_rabbit.show()
-		trap_box.process_mode = Node.PROCESS_MODE_DISABLED
-		trap_box.hide()
-		trap_stick.process_mode = Node.PROCESS_MODE_DISABLED
-		trap_stick.hide()
+		var instance_box = box.instantiate()
+		add_child(instance_box)
+		var instance_dead_rabbit = dead_rabbit.instantiate()
+		add_child(instance_dead_rabbit)
 		active=false
 
 func build_trap(part: String) -> void:
 	print(part)
 	if part=="Area3D2":
 		stickpart=true
-	else:
+		trap_box.active=true
+	else: if part=="Area3D4":
+		berrypart=true
+	else: if part=="Area3D":
 		boxpart=true
+
+func reset_trap() -> void:
+	trap_box.hide()
+	trap_box.active=false
+	trap_stick.hide()
+	trap_stick.active=true
+	berrypart.hide()
+	berrypart.active=true

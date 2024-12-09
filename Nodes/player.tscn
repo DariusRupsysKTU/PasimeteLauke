@@ -34,14 +34,14 @@ shader_parameter/sampling_count = 6
 
 [node name="AudioListener3D" type="AudioListener3D" parent="XROrigin3D/XRCamera3D"]
 
-[node name="Area3D" type="Area3D" parent="XROrigin3D/XRCamera3D"]
+[node name="mouth" type="Area3D" parent="XROrigin3D/XRCamera3D"]
 collision_mask = 131072
 script = ExtResource("1_ccuqk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/XRCamera3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/XRCamera3D/mouth"]
 shape = SubResource("SphereShape3D_drll1")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="XROrigin3D/XRCamera3D/Area3D"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="XROrigin3D/XRCamera3D/mouth"]
 stream = ExtResource("2_o41hy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRCamera3D"]
@@ -98,4 +98,4 @@ player_radius = 0.01
 player_height_min = 0.1
 player_height_max = 2.0
 
-[connection signal="body_entered" from="XROrigin3D/XRCamera3D/Area3D" to="XROrigin3D/XRCamera3D/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="XROrigin3D/XRCamera3D/mouth" to="XROrigin3D/XRCamera3D/mouth" method="_on_body_entered"]

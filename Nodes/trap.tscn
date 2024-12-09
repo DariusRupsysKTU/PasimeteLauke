@@ -1,9 +1,7 @@
-[gd_scene load_steps=16 format=4 uid="uid://ce2hwmp0kk8at"]
+[gd_scene load_steps=21 format=4 uid="uid://ce2hwmp0kk8at"]
 
 [ext_resource type="Script" path="res://scripts/trap_building.gd" id="1_dhh16"]
 [ext_resource type="Script" path="res://scripts/catching_in_trap.gd" id="2_6txwi"]
-[ext_resource type="PackedScene" uid="uid://hm8mtbjqajt" path="res://Nodes/box.tscn" id="2_cjf7s"]
-[ext_resource type="PackedScene" uid="uid://cwm4tkf3jjfvp" path="res://Nodes/dead_rabbit.tscn" id="4_vp3hn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_plxwk"]
 resource_name = "Material.001"
@@ -90,13 +88,41 @@ shadow_mesh = SubResource("ArrayMesh_f0esg")
 size = Vector3(0.630798, 0.727661, 1.1239)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mefat"]
-size = Vector3(0.668211, 0.51358, 0.952271)
+size = Vector3(0.423895, 0.51358, 0.454541)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fagba"]
+albedo_color = Color(0.931501, 0, 0.103332, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_lba7a"]
+material = SubResource("StandardMaterial3D_fagba")
+radius = 0.025
+height = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4f3r"]
+albedo_color = Color(0.933333, 0.756863, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ixest"]
+material = SubResource("StandardMaterial3D_t4f3r")
+radius = 0.005
+height = 0.01
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8xnw7"]
+size = Vector3(0.636383, 0.744507, 0.884766)
 
 [sub_resource type="BoxMesh" id="BoxMesh_25xk6"]
 size = Vector3(0.7, 0.01, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwlcl"]
 albedo_color = Color(0.0623622, 0.233776, 0.106477, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4m7xx"]
+albedo_color = Color(0, 0.0627451, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_sii2m"]
+material = SubResource("StandardMaterial3D_4m7xx")
+top_radius = 0.028
+bottom_radius = 0.028
+height = 0.01
 
 [node name="Trap" type="Node3D"]
 
@@ -136,19 +162,125 @@ collision_mask = 32768
 script = ExtResource("2_6txwi")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0974715, 0.253876, 0.219423)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0976256, 0.253876, 0.367385)
 shape = SubResource("BoxShape3D_mefat")
 
-[node name="PickableObject" parent="." instance=ExtResource("2_cjf7s")]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0.676023, 0.322929)
+[node name="Area3D4" type="Area3D" parent="."]
+visible = false
+collision_mask = 1048576
+script = ExtResource("1_dhh16")
 
-[node name="PickableObject2" parent="." instance=ExtResource("4_vp3hn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.316609)
+[node name="berry_meshes" type="Node3D" parent="Area3D4"]
+transform = Transform3D(0.932324, 0, -0.361625, 0, 1, 0, 0.361625, 0, 0.932324, 0, -0.0235992, 0.338373)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D4/berry_meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0255529, 0.00187755)
+mesh = SubResource("SphereMesh_lba7a")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Area3D4/berry_meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0219915, 0.0255529, 0.00187755)
+mesh = SubResource("SphereMesh_ixest")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Area3D4/berry_meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00991353, 0.0415753, 0.0140665)
+mesh = SubResource("SphereMesh_ixest")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Area3D4/berry_meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000744, 0.0415753, -0.0145794)
+mesh = SubResource("SphereMesh_ixest")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Area3D4/berry_meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00991353, 0.00535371, 0.00223336)
+mesh = SubResource("SphereMesh_ixest")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Area3D4/berry_meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0158302, 0.0225638, -0.0138304)
+mesh = SubResource("SphereMesh_ixest")
+skeleton = NodePath("")
+
+[node name="berry_meshes2" type="Node3D" parent="Area3D4"]
+transform = Transform3D(-0.389124, 0, -0.921185, 0, 1, 0, 0.921185, 0, -0.389124, 0.0518127, -0.0237411, 0.383428)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D4/berry_meshes2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0255529, 0.00187755)
+mesh = SubResource("SphereMesh_lba7a")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Area3D4/berry_meshes2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0219915, 0.0255529, 0.00187755)
+mesh = SubResource("SphereMesh_ixest")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Area3D4/berry_meshes2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00991353, 0.0415753, 0.0140665)
+mesh = SubResource("SphereMesh_ixest")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Area3D4/berry_meshes2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000744, 0.0415753, -0.0145794)
+mesh = SubResource("SphereMesh_ixest")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Area3D4/berry_meshes2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00991353, 0.00535371, 0.00223336)
+mesh = SubResource("SphereMesh_ixest")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Area3D4/berry_meshes2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0158302, 0.0225638, -0.0138304)
+mesh = SubResource("SphereMesh_ixest")
+skeleton = NodePath("")
+
+[node name="berry_meshes3" type="Node3D" parent="Area3D4"]
+transform = Transform3D(0.551937, 0, 0.833886, 0, 1, 0, -0.833886, 0, 0.551937, -0.0332395, -0.0187531, 0.375025)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D4/berry_meshes3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0255529, 0.00187755)
+mesh = SubResource("SphereMesh_lba7a")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Area3D4/berry_meshes3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0219915, 0.0255529, 0.00187755)
+mesh = SubResource("SphereMesh_ixest")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Area3D4/berry_meshes3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00991353, 0.0415753, 0.0140665)
+mesh = SubResource("SphereMesh_ixest")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Area3D4/berry_meshes3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000744, 0.0415753, -0.0145794)
+mesh = SubResource("SphereMesh_ixest")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Area3D4/berry_meshes3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00991353, 0.00535371, 0.00223336)
+mesh = SubResource("SphereMesh_ixest")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Area3D4/berry_meshes3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0158302, 0.0225638, -0.0138304)
+mesh = SubResource("SphereMesh_ixest")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0059967, 0.317078, 0.233528)
+shape = SubResource("BoxShape3D_8xnw7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.250382)
 mesh = SubResource("BoxMesh_25xk6")
 surface_material_override/0 = SubResource("StandardMaterial3D_fwlcl")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0125335, 0.00227384, -0.22161)
+mesh = SubResource("CylinderMesh_sii2m")
 
 [connection signal="body_entered" from="Area3D2" to="Area3D2" method="_on_body_entered"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
