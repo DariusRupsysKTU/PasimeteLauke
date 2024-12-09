@@ -15,7 +15,7 @@ cull_mode = 2
 albedo_color = Color(0.414269, 0.191521, 0.0488131, 1)
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_g6eqg"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_k7ci6"]
 _surfaces = [{
 "aabb": AABB(-0.537725, -3.51355, -3.88969, 1.07556, 1.24195, 5.49391),
 "format": 34896613377,
@@ -46,7 +46,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("/38AAP//7ej/fwAA////v/9/AAD//775/39KHAAA7ej/f0ocAACF/P9/ShwAAL75tOMkTgAAhfy04yROAAC++bTjJE4AAP//////P////7////8///+++f///z//////tOPasQAAhfy049qxAACW+LTj2rEAAP//////v////7////+///+W+P///7///////3+040IIOur/f7TjQgiF/P9/tONCCJb4/3//////Our/f///////v/9//////5b4ShzasQAA4MBKHNqxAAA66koc2rEAAIX8AAD/v///4MAAAP+///866gAA/7////+/ShwkTgAA4MBKHCROAADt6EocJE4AAIX8AAD/P///4MAAAP8////t6AAA/z////+/tOMkTgAA//+04yROAABH3rTjJE4AAHDs////P/////////8////57P9/tONCCP///3////////9KHNqxAAD0wgAA/7///w/Fg8DN+P9//393ltRMg8DN+HDBoz13ltRMcMGjPXeW1EytwPl//3//f3eW1EytwPl/cMGjPQs0YRWtwPl//3//fws0YRWtwPl/oneBvnDBoz0LNGEVoneBvv9//38LNGEV93/v/6J3gb5wwaM993/v/6J3gb7/f/9/93/v/4PAzfhwwaM993/v/4PAzfj/f/9/gbbKU25x9fd8cY3bgbbKU9twvdjYe2Nk2HtjZD9YUewcTc/m")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_g6eqg")
+shadow_mesh = SubResource("ArrayMesh_k7ci6")
 
 [sub_resource type="Resource" id="Resource_r5pdn"]
 script = ExtResource("4_4qici")
