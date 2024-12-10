@@ -4,6 +4,7 @@ extends CollisionShape3D
 @onready var prakuros_sound: AudioStreamPlayer3D = $"../../../Prakuros/AudioStreamPlayer3D"
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = $"../../AudioStreamPlayer3D"
 @onready var fire: GPUParticles3D = $"../../../Campfire/GPUParticles3D"
+@onready var fire_audio_stream_player_3d: AudioStreamPlayer3D = $"../../../Campfire/AudioStreamPlayer3D"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -31,4 +32,6 @@ func _on_area_3d_area_exited(area: Area3D) -> void:
 					if destination <= 0.75 and Globals.ActiveFireWoods >= 8:
 						fire.emitting = true
 					print("Ugnis")
+					fire_audio_stream_player_3d.play()
+					fire_audio_stream_player_3d.stream.loop = true
 	pass # Replace with function body.

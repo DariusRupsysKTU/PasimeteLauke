@@ -1,6 +1,7 @@
-[gd_scene load_steps=35 format=4 uid="uid://b5aibppr5lj1e"]
+[gd_scene load_steps=36 format=4 uid="uid://b5aibppr5lj1e"]
 
 [ext_resource type="Script" path="res://scripts/campfier_building.gd" id="1_o503u"]
+[ext_resource type="AudioStream" uid="uid://nvxymmtkxq4u" path="res://SFX/campfirefireplace-crackling.mp3" id="2_vqgxd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sliiy"]
 resource_name = "Material.003"
@@ -464,6 +465,9 @@ amount = 273
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_ma6n7")
 draw_pass_1 = SubResource("SphereMesh_m38n0")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_vqgxd")
 
 [connection signal="body_entered" from="lauzaviete/Cylinder_004/XRToolsInteractableArea" to="lauzaviete/Cylinder_004/XRToolsInteractableArea" method="_on_body_entered"]
 [connection signal="body_entered" from="lauzaviete/Cylinder_005/XRToolsInteractableArea" to="lauzaviete/Cylinder_005/XRToolsInteractableArea" method="_on_body_entered"]

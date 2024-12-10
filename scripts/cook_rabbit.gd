@@ -2,6 +2,8 @@ extends MeshInstance3D
 @onready var area_3d: Area3D = $".."
 @onready var prakuros: XRToolsPickable = $"../../../Prakuros"
 @onready var gpu_particles_3d: GPUParticles3D = $"../../../Campfire/GPUParticles3D"
+@onready var audio_stream_player_3d: AudioStreamPlayer3D = $"../AudioStreamPlayer3D"
+@onready var audio_stream_player_3d_2: AudioStreamPlayer3D = $"../AudioStreamPlayer3D2"
 
 var framer = 20
 var valgomas = false
@@ -28,8 +30,14 @@ func _process(delta: float) -> void:
 					var rabbitMaterial = get_surface_override_material(0)
 					var rabbitColor = rabbitMaterial.albedo_color
 					if(0.35 < rabbitColor.r and rabbitColor.r < 0.65):
+						if valgomas == false:
+							audio_stream_player_3d.play()
+							print("aaa111")
 						valgomas = true
+						print("aaa")
 					else:
+						if valgomas == true:
+							audio_stream_player_3d_2.play()
 						valgomas = false
 					#print(rabbitColor)
 					#print(valgomas)

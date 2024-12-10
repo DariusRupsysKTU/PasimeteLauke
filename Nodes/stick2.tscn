@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://cv3vakpgpwgx1"]
+[gd_scene load_steps=27 format=4 uid="uid://cv3vakpgpwgx1"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_127k5"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/audio/pickable_audio.gd" id="2_m1oyb"]
@@ -11,6 +11,8 @@
 [ext_resource type="Animation" uid="uid://ccds2u22gbxn7" path="res://addons/godot-xr-tools/hands/animations/right/Grip.res" id="10_bjnxn"]
 [ext_resource type="Script" path="res://Nodes/stab.gd" id="11_hro8p"]
 [ext_resource type="Script" path="res://scripts/cook_rabbit.gd" id="11_pv5wx"]
+[ext_resource type="AudioStream" uid="uid://r6ol0lbxl55q" path="res://SFX/match-sizzle1.mp3" id="12_gfm4p"]
+[ext_resource type="AudioStream" uid="uid://dd5vyx7qqkahm" path="res://SFX/match-sizzle2.mp3" id="13_i3gis"]
 
 [sub_resource type="Resource" id="Resource_r5pdn"]
 script = ExtResource("4_867jj")
@@ -172,6 +174,7 @@ visible = true
 hand_pose = SubResource("Resource_7x3i6")
 
 [node name="Area3D" type="Area3D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("11_hro8p")
@@ -186,5 +189,13 @@ script = ExtResource("11_pv5wx")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.644683)
 shape = SubResource("BoxShape3D_lf67k")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Area3D"]
+stream = ExtResource("12_gfm4p")
+max_db = 6.0
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Area3D"]
+stream = ExtResource("13_i3gis")
+max_db = 6.0
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
