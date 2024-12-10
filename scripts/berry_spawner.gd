@@ -21,7 +21,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if cooldown<=0 and need_new:
 		var inst = toSpawn.instantiate()
-		print(inst.name)
 		inst.name = inst.name + str(counter)
 		add_child(inst)
 		counter+=1
