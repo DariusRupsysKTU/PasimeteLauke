@@ -1,17 +1,21 @@
-[gd_scene load_steps=14 format=3 uid="uid://5sdnauxhmjio"]
+[gd_scene load_steps=18 format=3 uid="uid://5sdnauxhmjio"]
 
 [ext_resource type="Script" path="res://scripts/eating.gd" id="1_ccuqk"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="1_sd11b"]
 [ext_resource type="Material" uid="uid://dd4aiceehffm" path="res://pointer_material_3d.tres" id="2_byw5i"]
 [ext_resource type="AudioStream" uid="uid://dceare4tjfm1k" path="res://SFX/eating-sound-effect-36186.mp3" id="2_o41hy"]
 [ext_resource type="Material" uid="uid://d3wss8qb0bs0w" path="res://pointer_target_material_3d.tres" id="3_y3qs6"]
+[ext_resource type="AudioStream" uid="uid://bga54mu4bj1k0" path="res://SFX/stomach-growl-pish_01-5925.mp3" id="4_3to7b"]
 [ext_resource type="PackedScene" uid="uid://wtpox7m5vu2b" path="res://addons/godot-xr-tools/effects/fade.tscn" id="5_51v35"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_obd8x"]
+[ext_resource type="AudioStream" uid="uid://bjmy3m3gk0nps" path="res://SFX/cough.mp3" id="5_txh6v"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="6_8m5qv"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="6_fh2st"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="6_sl0px"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/player/player_body.gd" id="7_bm27h"]
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="8_xrqtq"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="12_7njyn"]
+[ext_resource type="PackedScene" uid="uid://c2gev33f3u341" path="res://Nodes/hunger_show.tscn" id="13_hh3pt"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_drll1"]
 radius = 0.2
@@ -35,6 +39,12 @@ shape = SubResource("SphereShape3D_drll1")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="XROrigin3D/XRCamera3D/mouth"]
 stream = ExtResource("2_o41hy")
+
+[node name="hungry_sound" type="AudioStreamPlayer3D" parent="XROrigin3D/XRCamera3D/mouth"]
+stream = ExtResource("4_3to7b")
+
+[node name="poison_sound" type="AudioStreamPlayer3D" parent="XROrigin3D/XRCamera3D/mouth"]
+stream = ExtResource("5_txh6v")
 
 [node name="righthand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2)
@@ -74,6 +84,11 @@ strafe = true
 ranged_distance = 10.0
 
 [node name="LeftHand" parent="XROrigin3D/lefthand" instance=ExtResource("8_xrqtq")]
+
+[node name="Viewport2Din3D" parent="XROrigin3D/lefthand" instance=ExtResource("12_7njyn")]
+transform = Transform3D(4.37114e-09, -3.82137e-16, -0.1, -8.74228e-09, -0.1, 0, -0.1, 8.74228e-09, -4.37114e-09, -0.0596595, 0.0387326, 0.0198071)
+scene = ExtResource("13_hh3pt")
+input_keyboard = false
 
 [node name="XRToolsPlayerBody" type="CharacterBody3D" parent="XROrigin3D"]
 top_level = true

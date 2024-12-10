@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://delxe676tr02p"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="TextEdit" type="TextEdit" parent="SubViewport"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "0/100"
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false

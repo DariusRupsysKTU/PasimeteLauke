@@ -10,7 +10,7 @@ var dead_rabbit = preload("res://Nodes/dead_rabbit.tscn")
 var boxpart = false
 var stickpart = false
 var berrypart = false
-var active = true
+var active = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
