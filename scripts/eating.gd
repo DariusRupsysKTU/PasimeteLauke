@@ -38,7 +38,6 @@ func _process(delta: float) -> void:
 		fade.set_fade(xr_camera_3d, Color(0, 0, 0, 0))
 
 func _on_body_entered(body: Node3D) -> void:
-	print(body.name)
 	if body.name.begins_with("PoisonousBerry"):
 		timer = 7
 		fade.set_fade(xr_camera_3d, Color(0.7, 0.4, 0, timer*0.025))
