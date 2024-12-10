@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 		inst.name = inst.name + str(counter)
 		add_child(inst)
 		counter+=1
-		cooldown = 5
+		cooldown = 30
 		need_new = false
 	else: if !need_new and !counter==self.get_child_count(false) and cooldown>0:
 		need_new = true
