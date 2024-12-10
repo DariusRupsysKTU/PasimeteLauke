@@ -32,9 +32,7 @@ func _process(delta: float) -> void:
 					if(0.35 < rabbitColor.r and rabbitColor.r < 0.65):
 						if valgomas == false:
 							audio_stream_player_3d.play()
-							print("aaa111")
 						valgomas = true
-						print("aaa")
 					else:
 						if valgomas == true:
 							audio_stream_player_3d_2.play()
