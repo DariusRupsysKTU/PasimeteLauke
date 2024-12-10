@@ -11,9 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node3D) -> void:
-	print(body.name)
-	if(active) and body.name == "@RigidBody3D@6":
-		print(body.name)
+	if(active) and body.name.begins_with("@RigidBody3D"):
 		body.process_mode = Node.PROCESS_MODE_DISABLED
 		body.hide()
 		self.show()
