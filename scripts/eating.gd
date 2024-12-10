@@ -4,9 +4,9 @@ extends Area3D
 @onready var mesh_instance_3d: MeshInstance3D = $"../MeshInstance3D"
 @onready var fade: XRToolsFade = $"../Fade"
 @onready var xr_camera_3d: XRCamera3D = $".."
-@onready var rabbit_stick: XRToolsPickable = $"../../../../PickableObject9"
-@onready var rabbit_area: Area3D = $"../../../../PickableObject9/Area3D"
-@onready var rabbit_mesh: MeshInstance3D = $"../../../../PickableObject9/Area3D/Mesh_Rabbit"
+@onready var rabbit_stick: XRToolsPickable = $"../../../../SharpStick"
+@onready var rabbit_area: Area3D = $"../../../../SharpStick/Area3D"
+@onready var rabbit_mesh: MeshInstance3D = $"../../../../SharpStick/Area3D/Mesh_Rabbit"
 @onready var hungry_sound: AudioStreamPlayer3D = $hungry_sound
 @onready var poison_sound: AudioStreamPlayer3D = $poison_sound
 

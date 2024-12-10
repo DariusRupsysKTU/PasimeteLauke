@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://addons/godot-xr-tools/player/player_body.gd" id="7_bm27h"]
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="8_xrqtq"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="12_7njyn"]
-[ext_resource type="PackedScene" uid="uid://c2gev33f3u341" path="res://Nodes/hunger_show.tscn" id="13_hh3pt"]
+[ext_resource type="PackedScene" path="res://Nodes/hunger_show.tscn" id="13_hh3pt"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_drll1"]
 radius = 0.2
