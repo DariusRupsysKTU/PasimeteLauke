@@ -5,6 +5,8 @@ var PoisonousBerry = preload("res://Nodes/poisonous_berry.tscn")
 var rng = RandomNumberGenerator.new()
 var cooldown = 0
 var toSpawn
+var counter = self.get_child_count(false)
+var need_new = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +19,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#if self.get_children(false)
-	if cooldown<=0:
+	if cooldown<=0 and need_new:
 		var inst = toSpawn.instantiate()
+		print(inst.name)
+		inst.name = inst.name + str(counter)
 		add_child(inst)
+		counter+=1
+		cooldown = 5
+		need_new = false
+	else: if !need_new and !counter==self.get_child_count(false) and cooldown>0:
+		need_new = true
+	else: if need_new:
+		cooldown-=delta

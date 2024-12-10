@@ -21,6 +21,7 @@ mass = 0.1
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_8nadv")
+picked_up_layer = 196608
 release_mode = 0
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
