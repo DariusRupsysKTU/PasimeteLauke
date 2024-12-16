@@ -465,6 +465,4 @@ transform = Transform3D(0.383085, 0.897627, -0.217973, 0.491705, 0.00160156, 0.8
 [node name="RegularStick8" parent="." instance=ExtResource("23_scm06")]
 transform = Transform3D(-0.809024, 0.370671, 0.456162, 0.491705, 0.00160158, 0.870761, 0.322035, 0.928763, -0.183556, -6.28273, 0.635571, -0.61939)
 
-[node name="berry_spawner" parent="." instance=ExtResource("17_1i56l")]
-
 [connection signal="area_exited" from="Flint2/Area3D" to="Flint1/Area3D/CollisionShape3D" method="_on_area_3d_area_exited"]

@@ -176,7 +176,7 @@ hand_pose = SubResource("Resource_7x3i6")
 [node name="Area3D" type="Area3D" parent="."]
 visible = false
 collision_layer = 4
-collision_mask = 7
+collision_mask = 131079
 script = ExtResource("11_hro8p")
 
 [node name="Mesh_Rabbit" type="MeshInstance3D" parent="Area3D"]
