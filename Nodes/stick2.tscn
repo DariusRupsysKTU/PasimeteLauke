@@ -139,7 +139,7 @@ shadow_mesh = SubResource("ArrayMesh_arhsp")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3rl2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lf67k"]
-size = Vector3(0.105, 0.075, 0.36)
+size = Vector3(0.105, 0.075, 0.730686)
 
 [node name="PickableObject" type="RigidBody3D"]
 collision_layer = 131076
@@ -175,8 +175,8 @@ hand_pose = SubResource("Resource_7x3i6")
 
 [node name="Area3D" type="Area3D" parent="."]
 visible = false
-collision_layer = 4
-collision_mask = 131079
+collision_layer = 131076
+collision_mask = 7
 script = ExtResource("11_hro8p")
 
 [node name="Mesh_Rabbit" type="MeshInstance3D" parent="Area3D"]
@@ -187,7 +187,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_g3rl2")
 script = ExtResource("11_pv5wx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.644683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45934)
 shape = SubResource("BoxShape3D_lf67k")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Area3D"]
